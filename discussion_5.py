@@ -43,13 +43,18 @@ class Warehouse:
 
 	# Returns the item in the warehouse with the most stock		
 	def get_max_stock(self):
-		for index in range(len(self.items) - 1):
-			if self.items[index].price > self.items[index - 1]:
+		max_stock = max(self.items.stock)
+		for index in range(len(self.items)):
+			if self.items[index].stock == max_stock:
 				return self.items[index]
 		pass
 	
 	# Returns the item in the warehouse with the highest price
 	def get_max_price(self):
+		max_price = max(self.items.price)
+		for index in range(len(self.items)):
+			if self.items[index].price == max_price:
+				return self.items[index]
 		pass	
 
 
